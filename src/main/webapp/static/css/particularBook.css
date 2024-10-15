@@ -1,0 +1,192 @@
+.book-particular-body{
+    height: 80.2%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(154, 154, 251, 0.2);
+}
+
+.body-card{
+    /*background-color: #917e7e;*/
+    width: 78%;
+    height: 100%;
+    box-shadow: 0 0 0.1rem #e7e7e7;
+    display: flex;
+}
+
+.body-card-left{
+    flex: 3;
+}
+.body-card-right{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    /*background-color: greenyellow;*/
+}
+
+.left-card-top{
+    height: 15%;
+    font-family: 上首赛博体;
+    font-style: italic;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.left-card-bottom{
+    height: 85%;
+    display: flex;
+    justify-content: space-between;
+}
+
+/*左*/
+.particular-book-btn {
+    width: 200px;
+    height: 40px;
+    margin-left: 50px;
+    background: linear-gradient(to bottom, #4CAF50, #388E3C);
+    border: none;
+    border-radius: 5px;
+    font-family: 文道小篆体;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 40px; /* 垂直居中 */
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3),
+    0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: transform 0.1s, box-shadow 0.1s;
+}
+.particular-book-btn:hover {
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3),
+    0 4px 8px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px); /* 向上移动 */
+}
+.particular-book-btn:active {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3),
+    0 1px 2px rgba(0, 0, 0, 0.2);
+    transform: translateY(2px); /* 向下移动 */
+}
+
+/*右*/
+.book-msg{
+    padding: 35px 0;
+    /*background-color: #1E9FFF;*/
+    flex: 1;
+}
+.book-else{
+    /*background-color: #9a9afb;*/
+    flex: 1;
+}
+
+.book-msg-div{
+    margin: 20px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 文道小篆体;
+    font-size: 18px;
+}
+
+.book-tag{
+    border: 1px solid rgba(255, 0, 0, 0.5);
+    color: rgba(255, 0, 0, 0.5);
+    border-radius: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    margin-right: 0.05rem;
+}
+
+
+/*对话框*/
+.dialog-box {
+    display: none;
+    width: 300px;
+    background: linear-gradient(135deg, #6a11cb, #2575fc); /* 渐变色 */
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    position: fixed; /* 使对话框在屏幕中心 */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 汉仪李胜洪侠客行;
+}
+
+.dialog-header {
+    background-color: rgba(255, 255, 255, 0.8); /* 半透明背景 */
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.dialog-header h2 {
+    margin: 0;
+    font-size: 18px;
+}
+
+.close-btn {
+    cursor: pointer;
+    font-size: 20px;
+    color: #555;
+}
+
+.dialog-body {
+    padding: 15px;
+    color: white; /* 字体颜色为白色 */
+}
+
+.input-group {
+    display: flex;
+    justify-content: space-between;
+}
+
+.input-group input {
+    flex: 1;
+    padding: 8px;
+    background: linear-gradient(135deg, rgba(106, 17, 203, 0.3), rgba(37, 117, 252, 0.3)); /* 与对话框一致的渐变背景 */
+    border: 1px solid rgba(255, 255, 255, 0.5); /* 半透明边框 */
+    color: white;
+    border-radius: 4px;
+    margin-right: 10px;
+}
+
+.input-group button {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+}
+
+.input-group button:hover {
+    background-color: #0056b3;
+}
+/*隐藏输入框右侧的上下按钮*/
+.input-group input::-webkit-inner-spin-button,
+.input-group input::-webkit-outer-spin-button {
+    -webkit-appearance: none; /* Safari */
+    margin: 0; /* 其他浏览器 */
+}
+
+
+
+/*滚动条*/
+::-webkit-scrollbar {
+    width: 12px; /* 滚动条宽度 */
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(148, 181, 255, 0.5); /* 轨道背景色 */
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(148, 181, 255, 0.5); /* 滑块颜色 */
+    border-radius: 10px; /* 圆角效果 */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(148, 181, 255, 0.3); /* 悬停时的颜色 */
+}

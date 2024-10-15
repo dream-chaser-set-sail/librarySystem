@@ -1,0 +1,228 @@
+@font-face {
+    font-family: "一叶知秋";
+    src: url("/static/fonts/一叶知秋行楷.ttf") format("truetype");
+}
+@font-face {
+    font-family: "瑞美加张清平硬笔楷书";
+    src: url("/static/fonts/ruimeijiazhangqingpingyingbikaishu.ttf") format("truetype");
+}
+
+
+/*主体部分*/
+.self-body{
+    display: flex;
+    justify-content: center; /* 水平居中 */
+    align-items: center; /* 垂直居中 */
+    margin-top: 50px;
+}
+/*左*/
+.self-body-left-div{
+    width: 6%; /* 设置宽度 */
+    height: 600px; /* 设置高度 */
+    display: flex;
+    flex-direction: column; /* 垂直方向排列 */
+    align-items: center;
+    justify-content: center;
+}
+.self-body-left-menu{
+    border: none;
+    width: 100%;
+    height: 50px;
+    background-color: rgb(255, 142, 31);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 16px;
+    margin-bottom: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transform: translateY(2px);
+    font-family: 瑞美加张清平硬笔楷书;
+    font-weight: bold;
+    font-size: 20px;
+}
+.self-body-left-menu:hover {
+    color: white;
+    cursor: pointer;
+    transform: scale(0.95); /* 缩小 */
+}
+
+/*右*/
+.self-body-right-div{
+    width: 64%; /* 设置宽度 */
+    height: 600px; /* 设置高度 */
+    display: flex;
+    flex-direction: column; /* 垂直方向排列 */
+    align-items: center;
+    justify-content: center;
+}
+.self-body-top, .self-body-bottom{
+    width: 100%;
+}
+.self-body-top{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 80%;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    background-color: rgb(199, 157, 72);
+    transform: translateY(2px);
+    margin-bottom: 10px;
+}
+.self-body-bottom{
+    height: 116%;
+    display: flex;
+    justify-content: space-between;
+}
+.self-body-bottom-left{
+    background-color: rgb(197, 255, 208); /* 背景色 */
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transform: translateX(2px);
+    width: 72%;
+}
+.self-body-bottom-right{
+    background-color: rgb(196, 167, 255); /* 背景色 */
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transform: translateX(2px);
+    width: 26%;
+    height: 32%;
+}
+
+/*头像*/
+.self-img-div{
+    margin-left: 12px;
+    width: 200px; /* 头像的宽度 */
+    height: 200px; /* 头像的高度 */
+    overflow: hidden; /* 隐藏溢出的部分 */
+    border-radius: 50%; /* 设置为圆形 */
+    display: flex; /* 使用 flexbox 来居中 */
+    justify-content: center; /* 水平居中 */
+    align-items: center; /* 垂直居中 */
+}
+.self-img-div img{
+    width: 100%; /* 图片宽度填满容器 */
+    height: auto; /* 高度自动调整，保持比例 */
+    display: block; /* 消除底部空白 */
+}
+/*基本信息*/
+.self-msg-div{
+    padding: 12px;
+    margin-right: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.self-msg-div div{
+    margin: 6px;
+    font-family: 文道小篆体;
+    color: #1f0d02;
+    font-weight: bold;
+    font-size: 25px;
+}
+.self-msg-div div p{
+    padding: 12px 12px;
+}
+.self-btn-div{
+    width: 3%;
+}
+.self-btn-div button{
+    /*margin-right: 8px;*/
+    border: none;
+    border-radius: 3px;
+    width: 15px;
+    color: black;
+    cursor: pointer; /* 改变鼠标样式 */
+    background-color: transparent; /* 设置背景色为透明 */
+    font-family: 文道小篆体;
+    font-size: 20px;
+}
+.self-btn-div button:active {
+    transform: scale(0.95); /* 点击时缩小 */
+}
+
+/*借阅记录*/
+.self-borrowMsg{
+    height: 300px; /* 设置固定高度 */
+    overflow-y: scroll; /* 纵向可滚动，但不显示滚动条 */
+    scrollbar-width: none; /* 对于 Firefox 隐藏滚动条 */
+    margin-top: 5px;
+    border-top: 1px solid rgba(164,155,155,0.5);
+    padding-top: 10px;
+    display: flex;
+    flex-direction: column;
+}
+.self-borrowMsg-div{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 12px;
+}
+.self-borrowMsg-div a, p{
+    flex: 1;
+    font-family: 瑞美加张清平硬笔楷书;
+    font-weight: bold;
+    font-size: 25px;
+    white-space: nowrap; /* 禁止换行 */
+    overflow: hidden;    /* 隐藏溢出的内容 */
+    text-overflow: ellipsis; /* 超出部分显示省略号 */
+}
+.self-borrowMsg-div a:hover{
+    cursor: pointer;
+    color: black;
+}
+.self-borrowMsg-div p,a span{
+    font-family: 一叶知秋;
+    font-size: 25px;
+}
+
+/*对话框部分*/
+.update{
+    width: 15%;
+    height: 56.5%;
+    padding: 10px;
+    background-color: #00F7DE;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transform: translateX(2px);
+    position: absolute;
+    top: 100px;
+    left: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+.update-top{
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+.update-bottom{
+    width: 180px;
+}
+.update-bottom input, select{
+    width: 100%;
+    height: 36px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.6);
+}
+
+/*修改头像*/
+.update-img-div{
+    margin-left: 12px;
+    width: 150px; /* 头像的宽度 */
+    height: 150px; /* 头像的高度 */
+    overflow: hidden; /* 隐藏溢出的部分 */
+    border-radius: 50%; /* 设置为圆形 */
+    display: flex; /* 使用 flexbox 来居中 */
+    justify-content: center; /* 水平居中 */
+    align-items: center; /* 垂直居中 */
+}
+.update-img-div img{
+    width: 100%; /* 图片宽度填满容器 */
+    height: auto; /* 高度自动调整，保持比例 */
+    display: block; /* 消除底部空白 */
+}

@@ -1,0 +1,117 @@
+/* 设置页面基本样式 */
+.body-stack {
+    font-family: 'KaiTi', serif; /* 设置字体为楷体 */
+    background-color: #f5f5dc; /* 设置背景颜色 */
+    color: #333; /* 设置字体颜色 */
+    width: 100%;
+    height: 122%;
+}
+
+/* 容器样式 */
+.container {
+    height: 100%;
+    display: flex; /* 使用弹性布局 */
+    max-width: 1200px; /* 最大宽度为1200像素 */
+    margin: 0 auto; /* 居中对齐 */
+}
+
+/*左侧分类部分*/
+.left-classify{
+    width: 18%;
+    border-right: 2px solid #ccc;
+    padding-right: 20px;
+}
+
+.left-classify h2 {
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 10px;
+    font-family: 文道小篆体;
+    font-size: 30px;
+}
+
+.left-classify ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.left-classify ul li p {
+    text-decoration: none;
+    color: #333;
+    padding: 5px 0;
+    display: block;
+    font-size: 16.5px;
+    font-family: 文道小篆体;
+}
+
+.book-list-container {
+    width: 75%;
+    padding-left: 20px;
+}
+
+.book-list-container h2 {
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 10px;
+    font-family: 文道小篆体;
+    font-size: 30px;
+}
+
+.book-list {
+    display: grid; /* 使用网格布局 */
+    grid-template-columns: repeat(2, 1fr); /* 两列布局 */
+    gap: 20px; /* 列间距 */
+}
+
+/* 单个书籍项样式 */
+.book-item {
+    margin: 5px;
+    display: flex;
+}
+
+.item-img-div{
+    width: 102px;
+    height: 136px;
+    overflow: hidden; /* 隐藏超出部分 */
+    border-radius: 15px; /* 设置圆角 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 设置立体效果 */
+    margin-right: 10px;
+}
+
+.item-content-div {
+    width: 100%;
+    height: 100%;
+}
+.item-content-div p:first-child{
+    font-family: 微软雅黑;
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+.item-content-div p{
+    max-height: 3em; /* 限制为三行 */
+    overflow: hidden;
+    font-family: 瑞美加张清平硬笔楷书;
+    margin: 5px 1px;
+}
+
+/* 书籍封面图样式 */
+.item-img-div img {
+    width: auto; /* 宽度自适应 */
+    height: 100%; /* 高度填满容器 */
+    display: block; /* 移除底部空隙 */
+}
+
+/* 分页样式 */
+.pagination {
+    display: flex;
+    justify-content: space-between;
+    margin: 8px 0;
+}
+
+/* 分页链接样式 */
+.pagination button {
+    border: none;
+    background-color: transparent;
+}
+.pagination button:hover {
+    cursor: pointer;
+    color: rgba(148, 181, 255, 0.5);
+}

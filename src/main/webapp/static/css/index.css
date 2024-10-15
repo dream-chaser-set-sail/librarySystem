@@ -1,0 +1,370 @@
+@font-face {
+    font-family: "汉呈疯狂行草";
+    src: url("/static/fonts/汉呈疯狂行草.ttf") format("truetype");
+}
+@font-face {
+    font-family: "文道小篆体";
+    src: url("/static/fonts/wendaoxiaozhuanti.ttf") format("truetype");
+}
+@font-face {
+    font-family: "汉仪李胜洪侠客行";
+    src: url("/static/fonts/hanyilishenghongxiakexing.ttf") format("truetype");
+}
+@font-face {
+    font-family: "瑞美加张清平硬笔楷书";
+    src: url("/static/fonts/ruimeijiazhangqingpingyingbikaishu.ttf") format("truetype");
+}
+@font-face {
+    font-family: "上首赛博体";
+    src: url("/static/fonts/shangshousaiboti.ttf") format("truetype");
+}
+/*后台侧边栏效果*/
+.layui-nav-item .site-demo-active:hover{
+    background-color: rgba(143,143,143,0.2); /* 鼠标经过时背景颜色 */
+}
+
+/*头部分效果*/
+.head-div{
+    display: flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+    padding: 2px;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
+    background-color: #e5ebff;
+}
+.hidden {
+    top: -100px; /* 隐藏标题栏 */
+}
+.head-div-left, .head-div-right{
+    display: flex;
+    align-items: center;
+    width: 48%;
+    box-sizing: border-box;
+}
+
+/*LOGO图片*/
+.head-logo{
+    width: 80px; /* 设置宽度 */
+    height: auto; /* 高度自动调整保持比例 */
+    margin-left: 5px;
+}
+
+/*LOGO后面的文字*/
+.head-logo-txt{
+    font-family: 汉呈疯狂行草;
+    font-size: 48px;
+    display: inline-block;
+    margin-left: 20px;
+}
+
+/*头部分显示时间*/
+.head-div-time{
+    width: 33%;
+    height: 60%;
+    border-radius: 26px;
+    margin-left: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.5);
+    box-shadow: 0 2px 16px 0 rgba(0, 0, 0, .03);
+}
+.head-time{
+    font-family: 文道小篆体;
+    color: #6a758f;
+    font-size: 22px;
+    margin-right: 5px;
+}
+.head-i{
+    margin-left: 5px;
+    font-size: 25px;
+    color: #6a758f;
+}
+
+/*头部分搜素框*/
+.head-div-input{
+    width: 50%;
+    height: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.head-input-text{
+    width: 100%;
+    height: 100%;
+    font-family: 文道小篆体;
+    border-radius: 20px;
+    border: none;
+    margin-left: 5px;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+/*设置头部input的placeholder样式*/
+.head-input-text::placeholder {
+    font-family: 文道小篆体, sans-serif !important;
+    color: #6a758f !important;
+    font-size: 14px !important;
+}
+
+/*用户头像部分*/
+.head-div-headPhoto{
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.head-headPhoto{
+    width: 55px; /* 设置宽度 */
+    height: 55px;
+    border-radius: 50%;
+    overflow: hidden;
+    cursor: pointer;
+}
+.head-div-username{
+    margin: 0 10px;
+    font-size: 25px;
+    color: #6a758f;
+    font-family: 文道小篆体;
+    cursor: pointer;
+}
+.head-div-username:hover{
+    color: rgb(0, 0, 0);
+}
+/*设置下拉列表*/
+.head-user-list{
+    display: none;
+    position: absolute; /* 绝对定位 */
+    top: 11%; /* 在 .head-div-headPhoto 下方 */
+    left: 92%;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    width: 110px; /* 根据需要调整宽度 */
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
+}
+.head-user-list dd {
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+}
+/* 鼠标悬停时改变背景色 */
+.head-user-list dd:hover {
+    background-color: #f0f0f0;
+}
+
+/*主体部分效果*/
+.body-div{
+    width: 100%;
+    height: 100%;
+    background-color: #d0b888;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column; /* 垂直排列子项 */
+}
+.body-div-h1{
+    margin-top: 100px;
+}
+.body-h1{
+    font-family: 汉仪李胜洪侠客行;
+    font-size: 100px;
+}
+/*if判断*/
+.body-div-isStatus{
+    display: none;
+}
+.body-div-isBooknum{
+    display: none;
+}
+.body-div-isCredit{
+    display: none;
+}
+/*按钮效果*/
+.body-unborrowed-btn, .body-borrowed-btn, .body-renewal-btn{
+    width: 100px;
+    height: 50px;
+    line-height: 38px;
+    border: 1px solid transparent;
+    padding: 0 18px;
+    color: #fff;
+    text-align: center;
+    font-size: 15px;
+    font-family: 楷体;
+    border-radius: 15px;
+    cursor: pointer;
+    margin-right: 5px;
+}
+.body-unborrowed-btn{
+    background-color: #0a771d;
+}
+.body-borrowed-btn{
+    background-color: #cc7fff;
+}
+.body-renewal-btn{
+    background-color: #78b6ff;
+}
+/*还书提示*/
+.body-reminder-h1{
+    font-family: 汉仪李胜洪侠客行;
+    color: #b70000;
+}
+
+/*主体部分2*/
+.body-index{
+    height: 100%;
+    background-color: #d0b888;;
+}
+.body-index-div{
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+.body-index-right-div{
+    flex-grow: 1; /* 自动填充剩余空间 */
+    transition: width 0.5s ease; /* 添加过渡效果 */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* 设置轮播图容器的样式 */
+.layui-carousel {
+    width: 100%; /* 轮播图的宽度 */
+    height: 100%; /* 设置轮播图的高度 */
+    overflow: hidden; /* 隐藏溢出的内容 */
+}
+
+/* 设置每个轮播项的样式 */
+.layui-carousel img {
+    width: 100%; /* 图片宽度填满轮播项 */
+    height: 100%; /* 图片高度填满轮播项 */
+    object-fit: cover; /* 保持图片比例并覆盖整个区域 */
+}
+
+.body-index-carousel{
+    width: 100%;
+    height: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.body-carousel-text{
+    height: 100%;
+    width: 30%;
+    font-family: 瑞美加张清平硬笔楷书;
+    font-weight: bold;
+    background-image: url("/static/img/平面插画需求.jpeg");
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.body-carousel-text h1{
+    margin: 18px 0;
+    color: black;
+}
+
+.body-carousel-text button{
+    margin-top: 120px;
+}
+
+
+/*热门书籍*/
+.hotBook-div{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hotBook-frame{
+    width: 20%;
+    height: 100%;
+    margin: 0 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hot-book{
+    position: relative; /* 为聚光灯效果提供基准 */
+    padding: 20px; /* 内边距以增加空间 */
+    border-radius: 15px; /* 圆角 */
+    background-color: rgba(255, 255, 255, 0.2); /* 背景色 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 阴影效果 */
+}
+.hot-book-text{
+    margin-top: 12px;
+    font-family: 上首赛博体;
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+/*热门书籍书封面*/
+.image-container {
+    display: inline-block; /* 使容器自适应内容 */
+    overflow: hidden; /* 隐藏超出部分 */
+    border-radius: 15px; /* 设置圆角 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 设置立体效果 */
+}
+
+.image-container img {
+    width: 240px; /* 设置图片宽度 */
+    height: 310px; /* 保持图片比例 */
+    display: block; /* 移除底部空隙 */
+}
+
+/*页面尾部*/
+.foot-div{
+    width: 100%;
+    height: 8.8%;
+    background-color: #e5ebff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.foot-div-h1{
+    font-family: 文道小篆体;
+    color: #6a758f;
+}
+.foot-slogan{
+    margin-left: 550px;
+}
+.foot-copy{
+    margin-right: 50px;
+}
+
+
+/*书签按钮*/
+.bookmark-button {
+    position: relative;
+    padding: 10px 20px;
+    background: linear-gradient(45deg, #ff7e5f, #feb47b); /* 暖色渐变 */
+    color: white;
+    border: none;
+    border-radius: 5px 5px 0 0;
+    cursor: pointer;
+    font-size: 16px;
+    text-decoration: none;
+    transition: background 0.3s ease;
+    display: inline-block;
+}
+.bookmark-button:hover {
+    background: linear-gradient(45deg, #feb47b, #ff7e5f); /* 悬停时渐变反转 */
+}
+.bookmark-button::after {
+    content: '';
+    position: absolute;
+    bottom: -15px; /* 三角形位置 */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-top: 15px solid #ff7e5f; /* 三角形颜色与渐变相匹配 */
+}
