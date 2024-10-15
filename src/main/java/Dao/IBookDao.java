@@ -1,9 +1,6 @@
 package Dao;
 
-import Bean.Admin;
-import Bean.Books;
-import Bean.BorrowCard;
-import Bean.UserQuery;
+import Bean.*;
 
 import java.util.List;
 
@@ -19,4 +16,6 @@ public interface IBookDao {
     Books selBookByisbn(String isbn);
     List<Books> selTop();
     List<Books> selClick();
+    List<BooksExcel> selectAll();
+
 }

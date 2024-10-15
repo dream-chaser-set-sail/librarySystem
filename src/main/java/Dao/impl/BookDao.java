@@ -1,9 +1,6 @@
 package Dao.impl;
 
-import Bean.Admin;
-import Bean.Books;
-import Bean.BorrowCard;
-import Bean.UserQuery;
+import Bean.*;
 import Dao.IBookDao;
 import Dao.IBorrowCardDao;
 import Util.MySQLUtil;
@@ -110,5 +107,11 @@ public class BookDao implements IBookDao {
     public List<Books> selClick() {
         String sql = "SELECT * FROM book ORDER BY onclick_num DESC LIMIT 0,3";
         return MySQLUtil.SELECT(sql, Books.class, null);
+    }
+
+    @Override
+    public List<BooksExcel> selectAll() {
+        String sql = "SELECT b.*, t.name 'bookTypeName' FROM book b, book_classify t WHERE b.book_type = t.id";
+        return MySQLUtil.SELECT(sql, BooksExcel.class, null);
     }
 }

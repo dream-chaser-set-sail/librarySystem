@@ -6,6 +6,7 @@ import Bean.BorrowCard;
 import Bean.UserQuery;
 import Util.PageTable;
 
+import javax.servlet.http.HttpServletResponse;
 import java.util.List;
 
 public interface IBookService {
@@ -20,4 +21,5 @@ public interface IBookService {
     Books selBookByisbn(String id, String isbn);
     List<Books> selTop();
     List<Books> selClick();
+    void exportExcel(HttpServletResponse resp);
 }

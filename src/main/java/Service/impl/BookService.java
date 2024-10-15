@@ -5,8 +5,10 @@ import Dao.*;
 import Dao.impl.*;
 import Service.IBookService;
 import Service.IBorrowCardService;
+import Util.ExcelUtil;
 import Util.PageTable;
 
+import javax.servlet.http.HttpServletResponse;
 import java.util.List;
 import java.util.UUID;
 
@@ -109,5 +111,11 @@ public class BookService implements IBookService {
     @Override
     public List<Books> selClick() {
         return iBookDao.selClick();
+    }
+
+    @Override
+    public void exportExcel(HttpServletResponse resp) {
+        List<BooksExcel> booksExcelList = iBookDao.selectAll();
+        ExcelUtil.exportExcel(resp,booksExcelList, BooksExcel.class, "Books");
     }
 }

@@ -42,6 +42,8 @@
 <script type="text/html" id="toolbarDemo">
     <button class="layui-btn layui-bg-blue layui-btn-radius layui-btn-sm" lay-event="Add"><i class="layui-icon layui-icon-edit"></i></button>
     <button class="layui-btn layui-bg-red layui-btn-radius layui-btn-sm" lay-event="DelAll"><i class="layui-icon layui-icon-delete"></i></button>
+    <button class="layui-btn layui-bg-green layui-btn-radius layui-btn-sm" lay-event="Download"><i class="layui-icon layui-icon-export"></i></button>
+    <button class="layui-btn layui-bg-orange layui-btn-radius layui-btn-sm" lay-event="Upload"><i class="layui-icon layui-icon-upload"></i></button>
 </script>
 
 <script type="text/html" id="imgURL">
@@ -159,6 +161,10 @@
                         })
                     })
                     break;
+                case 'Download':
+                    location.href = '/Book?method=exportExcel'
+                    break
+
             }
         })
 

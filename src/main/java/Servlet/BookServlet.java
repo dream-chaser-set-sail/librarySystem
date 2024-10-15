@@ -67,7 +67,14 @@ public class BookServlet extends HttpServlet {
             case "selClick":
                 selClick(req,resp);
                 break;
+            case "exportExcel":
+                exportExcel(req,resp);
+                break;
         }
+    }
+
+    private void exportExcel(HttpServletRequest req, HttpServletResponse resp) {
+        iBookService.exportExcel(resp);
     }
 
     private void selClick(HttpServletRequest req, HttpServletResponse resp) throws IOException {
