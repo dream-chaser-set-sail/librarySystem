@@ -38,7 +38,7 @@
 .head-div-left, .head-div-right{
     display: flex;
     align-items: center;
-    width: 48%;
+    width: 50%;
     box-sizing: border-box;
 }
 
@@ -367,4 +367,54 @@
     border-left: 15px solid transparent;
     border-right: 15px solid transparent;
     border-top: 15px solid #ff7e5f; /* 三角形颜色与渐变相匹配 */
+}
+
+/*退出弹出框部分*/
+.index-modal{
+    display: none;
+    width: 300px;
+    height: 160px;
+    background-color: white;
+    position: fixed; /* 固定定位 */
+    z-index: 1; /* 确保在最上层 */
+    left: 600px;
+    top: 280px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.modal-title{
+    width: 100%;
+    height: 30%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 汉仪李胜洪侠客行;
+    font-size: 18px;
+    margin-bottom: 10px;
+    border-bottom: #9f9f9f solid 1px;
+}
+
+.model-close{
+    cursor: pointer;
+    font-size: 28px;
+}
+
+.model-body{
+    width: 100%;
+    height: 70%;
+    padding-left: 20px;
+    font-family: 汉呈疯狂行草;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.model-btn{
+    border: none;
+    background-color: rgba(203, 203, 203, 0.5);
+    border-radius: 8px;
+    width: 50px;
+    height: 30px;
+    cursor: pointer;
 }

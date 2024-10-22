@@ -182,6 +182,23 @@
         <h3 style="font-family: 宋体">大学图书馆&copy;版权所有</h3>
     </div>
 </div>
+
+<%--退出弹出框--%>
+<div class="index-modal">
+    <div class="modal-title">
+        <h2>退出</h2>
+        <span class="model-close">&times;</span>
+    </div>
+    <div class="model-body">
+        <div>
+            <h2 style="margin: 20px 0">您确定要退出吗 ?</h2>
+        </div>
+        <div style="display: flex;">
+            <button id="model-ok" class="model-btn" style="margin-left: 53px">确定</button>
+            <button id="model-no" class="model-btn" style="margin-left: 55px">取消</button>
+        </div>
+    </div>
+</div>
 </body>
 </html>
 <script>
@@ -201,14 +218,16 @@
     indexJs.hotBook()
 
     function out(){
-        layer.confirm('您确定要退出吗？', {icon: 3}, function (){
-            location.href = '/BorrowCard?method=quit'
-            myLayui.message('已退出…', 0)
-            setTimeout(function (){
-                location.reload()
-            },500)
-        })
+        $('.index-modal').css('display', 'block');
     }
+
+    $('.model-close, #model-no').click(function (){
+        $('.index-modal').css('display', 'none');
+    })
+
+    $('#model-ok').click(function (){
+        location.href = '/BorrowCard?method=quit'
+    })
 
     $('#yourProfile').click(function (){
         location.href = '/page/personalCenter'
