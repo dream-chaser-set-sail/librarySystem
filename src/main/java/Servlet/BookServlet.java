@@ -70,7 +70,16 @@ public class BookServlet extends HttpServlet {
             case "exportExcel":
                 exportExcel(req,resp);
                 break;
+            case "importExcel":
+                importExcel(req,resp);
+                break;
         }
+    }
+
+    private void importExcel(HttpServletRequest req, HttpServletResponse resp) throws IOException {
+        String msg = iBookService.importExcel(req);
+        resp.setContentType("text/html;charset=UTF-8");
+        mapper.writeValue(resp.getWriter(), msg);
     }
 
     private void exportExcel(HttpServletRequest req, HttpServletResponse resp) {

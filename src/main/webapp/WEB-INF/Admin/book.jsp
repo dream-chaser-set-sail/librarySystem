@@ -39,6 +39,7 @@
     <a class="layui-btn layui-btn-xs" lay-event="edit">编辑</a>
     <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
 </script>
+<button lay-options="{accept: 'file'}" id="importExcel"></button>
 <script type="text/html" id="toolbarDemo">
     <button class="layui-btn layui-bg-blue layui-btn-radius layui-btn-sm" lay-event="Add"><i class="layui-icon layui-icon-edit"></i></button>
     <button class="layui-btn layui-bg-red layui-btn-radius layui-btn-sm" lay-event="DelAll"><i class="layui-icon layui-icon-delete"></i></button>
@@ -58,10 +59,11 @@
 </body>
 </html>
 <script>
-    layui.use(['table', 'form', 'laydate'], function (){
+    layui.use(['table', 'form', 'laydate', 'upload'], function (){
         var table = layui.table;
         var form = layui.form;
         var laydate = layui.laydate;
+        var upload = layui.upload;
 
         table.render({
             elem: '#blogTable',
@@ -164,9 +166,22 @@
                 case 'Download':
                     location.href = '/Book?method=exportExcel'
                     break
-
+                case 'Upload':
+                    $('#importExcel').click();
+                    break
             }
         })
+
+        // 渲染
+        upload.render({
+            elem: '#importExcel', // 绑定多个元素
+            url: '/Book?method=importExcel', // 此处配置你自己的上传接口即可
+            accept: 'file', // 普通文件
+            done: function(res){
+                layer.msg('上传成功');
+                table.reload()
+            }
+        });
 
         form.on('submit(formDemo)', function (data){
             var data = data.field

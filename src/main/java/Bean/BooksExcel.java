@@ -29,7 +29,7 @@ public class BooksExcel {
     private String author;
     @ExcelProperty(value = "出版社")
     private String publishingHouse;
-    @ExcelIgnore
+    @ExcelProperty(value = "标签ID")
     private Integer bookType;
     @ExcelProperty(value = "书籍标签")
     private String bookTypeName;

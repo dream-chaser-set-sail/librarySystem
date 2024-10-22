@@ -1,9 +1,6 @@
 package Util;
 
 
-import Bean.Admin;
-import Bean.BorrowCard;
-
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.sql.*;
@@ -53,6 +50,7 @@ public class MySQLUtil {
             }
             System.out.println(preparedStatement);
             resultSet = preparedStatement.executeQuery();
+//            获取查询到的元数据
             ResultSetMetaData metaData = resultSet.getMetaData();
 //            查询出的列数
             int columnCount = metaData.getColumnCount();
@@ -287,9 +285,5 @@ public class MySQLUtil {
     public static void main(String[] args) {
 //        String s = changeName("admin_status");
 //        System.out.println(s);
-
-        String sql = "SELECT admin_card_num FROM admin WHERE admin_card_num = ?";
-        Admin admin = SELECTone(sql, Admin.class, "75839244112");
-        System.out.println(admin);
     }
 }

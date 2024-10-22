@@ -17,5 +17,5 @@ public interface IBookDao {
     List<Books> selTop();
     List<Books> selClick();
     List<BooksExcel> selectAll();
-
+    void addExcel(BooksExcel booksExcel);
 }

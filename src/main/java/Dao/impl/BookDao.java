@@ -114,4 +114,10 @@ public class BookDao implements IBookDao {
         String sql = "SELECT b.*, t.name 'bookTypeName' FROM book b, book_classify t WHERE b.book_type = t.id";
         return MySQLUtil.SELECT(sql, BooksExcel.class, null);
     }
+
+    @Override
+    public void addExcel(BooksExcel booksExcel) {
+        String sql = "INSERT INTO book (name, isbn, synopsis, author, publishing_house, book_type, price, amount) VALUES(?,?,?,?,?,?,?,?)";
+        MySQLUtil.UPDATE(sql, null, booksExcel.getName(), booksExcel.getIsbn(), booksExcel.getSynopsis(), booksExcel.getAuthor(), booksExcel.getPublishingHouse(), booksExcel.getBookType(), booksExcel.getPrice(), booksExcel.getAmount());
+    }
 }
