@@ -2,6 +2,7 @@ package Dao;
 
 import Bean.Admin;
 import Bean.BorrowCard;
+import Bean.LoginLog;
 import Bean.UserQuery;
 import Util.PageTable;
 
@@ -20,4 +21,5 @@ public interface IBorrowCardDao {
     Boolean authorization(Integer id, Integer isAdmin);
     BorrowCard selUser(String id);
     Boolean upByself(BorrowCard borrowCard);
+    void loginLog(LoginLog loginLog);
 }

@@ -124,6 +124,11 @@ public class BorrowCardService implements IBorrowCardService {
         return iBorrowCardDao.upByself(borrowCard);
     }
 
+    @Override
+    public void loginLog(LoginLog loginLog) {
+        iBorrowCardDao.loginLog(loginLog);
+    }
+
     // 生成卡号
     public String BorrowCardNum(){
         String uuid = String.valueOf(UUID.randomUUID());

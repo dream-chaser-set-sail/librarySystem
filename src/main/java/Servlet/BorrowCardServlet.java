@@ -2,6 +2,7 @@ package Servlet;
 
 import Bean.Admin;
 import Bean.BorrowCard;
+import Bean.LoginLog;
 import Bean.UserQuery;
 import Dao.IBorrowCardDao;
 import Service.IAdminService;
@@ -129,14 +130,14 @@ public class BorrowCardServlet extends HttpServlet {
     }
 
     private void login(HttpServletRequest req, HttpServletResponse resp) throws IOException {
+        String ip = req.getRemoteAddr();
         Admin admins = MyBeanUtil.copyToBean(req, Admin.class);
         String verificationCode = req.getParameter("verificationCode");
         Map<String, Object> map = new HashMap<>();
+        LoginLog loginLog = new LoginLog();
         Boolean isAdmin = false;
         Boolean isOk = false;
         String msg = "验证码有误，请重试";
-
-
 
         HttpSession session = req.getSession();
         // 验证码图片
@@ -149,6 +150,10 @@ public class BorrowCardServlet extends HttpServlet {
                 Admin admin = iAdminService.loginAdmin(admins);
                 if (admin != null){
                     // 密码正确，登录成功
+                    loginLog.setUserId(admin.getAdminCardNum());
+                    loginLog.setUserName(admin.getName());
+                    loginLog.setRole(4);
+                    loginLog.setUnit(2);
                     session.setAttribute("isLogin", admin);
                     isOk = true;
                     isAdmin = true;
@@ -162,6 +167,10 @@ public class BorrowCardServlet extends HttpServlet {
                 BorrowCard borrowCard = iBorrowCardService.loginBorrowCard(admins);
                 if (borrowCard != null){
                     // 密码正确，登录成功
+                    loginLog.setUserId(borrowCard.getBorrowCardNum());
+                    loginLog.setUserName(borrowCard.getName());
+                    loginLog.setRole(borrowCard.getRole());
+                    loginLog.setUnit(borrowCard.getUnit());
                     session.setAttribute("isLogin", borrowCard);
                     isOk = true;
                     msg = "登录成功";
@@ -170,6 +179,11 @@ public class BorrowCardServlet extends HttpServlet {
                 }
 
             }
+        }
+
+        if (msg.equals("登录成功")){
+            loginLog.setIp(ip);
+            iBorrowCardService.loginLog(loginLog);
         }
 
         map.put("isOk", isOk);

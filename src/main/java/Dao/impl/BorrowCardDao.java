@@ -2,6 +2,7 @@ package Dao.impl;
 
 import Bean.Admin;
 import Bean.BorrowCard;
+import Bean.LoginLog;
 import Bean.UserQuery;
 import Dao.IBorrowCardDao;
 import Util.MyBeanUtil;
@@ -151,5 +152,11 @@ public class BorrowCardDao implements IBorrowCardDao {
         String cleanedSql = sql.replace(",WHERE", " WHERE");
 
         return MySQLUtil.UPDATE(cleanedSql, list);
+    }
+
+    @Override
+    public void loginLog(LoginLog loginLog) {
+        String sql = "INSERT INTO login_log (user_id, user_name, ip, role, unit) VALUES(?, ?, ?, ?, ?)";
+        MySQLUtil.UPDATE(sql, null, loginLog.getUserId(), loginLog.getUserName(), loginLog.getIp(), loginLog.getRole(), loginLog.getUnit());
     }
 }

@@ -2,6 +2,7 @@ package Service;
 
 import Bean.Admin;
 import Bean.BorrowCard;
+import Bean.LoginLog;
 import Bean.UserQuery;
 import Util.PageTable;
 
@@ -18,4 +19,5 @@ public interface IBorrowCardService {
     Boolean update(BorrowCard borrowCard);
     BorrowCard selUser(String id);
     Boolean upByself(BorrowCard borrowCard);
+    void loginLog(LoginLog loginLog);
 }

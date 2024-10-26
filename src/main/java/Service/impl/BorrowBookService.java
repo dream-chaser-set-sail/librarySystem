@@ -88,6 +88,7 @@ public class BorrowBookService implements IBorrowBookService {
         String createTime = formatter.format(date);
         String endTime = ComputingTimeUtil.extensionOfvalidity(date, addNum);
 
+        // 把到期时间转为毫秒数
         long endTimeMillis = 0;
         try {
             endTimeMillis = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").parse(endTime).getTime();
