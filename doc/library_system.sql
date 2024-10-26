@@ -11,7 +11,7 @@
  Target Server Version : 80037 (8.0.37)
  File Encoding         : 65001
 
- Date: 15/10/2024 13:40:13
+ Date: 26/10/2024 10:02:38
 */
 
 SET NAMES utf8mb4;
@@ -51,7 +51,7 @@ CREATE TABLE `book`  (
   `author` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL COMMENT '作者',
   `publishing_house` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL COMMENT '出版社',
   `book_type` int NULL DEFAULT NULL COMMENT '书籍分类',
-  `image` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL COMMENT '封面图片名',
+  `image` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT 'null' COMMENT '封面图片名',
   `price` double NOT NULL DEFAULT 0 COMMENT '价格',
   `amount` int NOT NULL DEFAULT 0 COMMENT '数量',
   `ontop` int NOT NULL DEFAULT 0 COMMENT '0 未置顶 1 已置顶',
@@ -60,12 +60,12 @@ CREATE TABLE `book`  (
   `synopsis` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL DEFAULT '暂无' COMMENT '书籍简介',
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE INDEX `name`(`name` ASC) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 64 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci COMMENT = '书表' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 79 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci COMMENT = '书表' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of book
 -- ----------------------------
-INSERT INTO `book` VALUES (1, '《追风筝的人》', '9781594480003', '卡勒德·胡赛尼', '花城出版社', 1, '4ba74fe3c159406ab5e3522d33855ba5.jpeg', 29.99, 10, 1, 36, '2024-09-17 10:46:56', '《追风筝的人》是卡勒德·胡赛尼创作的一部感人至深的小说，讲述了阿米尔和他的朋友哈桑之间复杂的友谊与背叛。故事发生在阿富汗，描绘了他们童年时快乐的放风筝时光，但随着政治动荡和个人选择，二人关系逐渐破裂。成年后的阿米尔回到战乱后的故乡，试图为过去的错误赎罪，并帮助哈桑的儿子。小说深刻探讨了友谊、悔恨和救赎，展现了人性中的善与恶。');
+INSERT INTO `book` VALUES (1, '《追风筝的人》', '9781594480003', '卡勒德·胡赛尼', '花城出版社', 1, '4ba74fe3c159406ab5e3522d33855ba5.jpeg', 29.99, 10, 1, 37, '2024-09-17 10:46:56', '《追风筝的人》是卡勒德·胡赛尼创作的一部感人至深的小说，讲述了阿米尔和他的朋友哈桑之间复杂的友谊与背叛。故事发生在阿富汗，描绘了他们童年时快乐的放风筝时光，但随着政治动荡和个人选择，二人关系逐渐破裂。成年后的阿米尔回到战乱后的故乡，试图为过去的错误赎罪，并帮助哈桑的儿子。小说深刻探讨了友谊、悔恨和救赎，展现了人性中的善与恶。');
 INSERT INTO `book` VALUES (2, '《小王子》', '9787544270874', '安托万·德·圣埃克苏佩里', '人民文学出版社', 1, 'little_prince.jpg', 18, 15, 0, 0, '2024-09-17 10:46:56', '暂无');
 INSERT INTO `book` VALUES (3, '《时间简史》', '9780553380163', '斯蒂芬·霍金', '未知出版社', 2, '0c140376a65b4d0c94dd5ac45cab018d.jpeg', 35.5, 7, 1, 1, '2024-09-17 10:46:56', '暂无');
 INSERT INTO `book` VALUES (4, '《编程珠玑》', '9780321193681', 'Jon Bentley', '电子工业出版社', 9, '944d13e91f50449383803ca4cca167ee.jpeg', 49.99, 5, 1, 80, '2024-09-17 10:46:56', '暂无');
@@ -173,9 +173,9 @@ CREATE TABLE `borrow_books`  (
 -- ----------------------------
 -- Records of borrow_books
 -- ----------------------------
-INSERT INTO `borrow_books` VALUES (1, '9781594480003', '2024-09-17 11:00:10', '2024-10-6 01:38:11', 2, '65591434939');
+INSERT INTO `borrow_books` VALUES (1, '9781594480003', '2024-09-17 11:00:10', '2024-10-27 19:46:14', 2, '65591434939');
 INSERT INTO `borrow_books` VALUES (2, '9787506389723', '2024-09-17 14:45:30', '2024-10-04 13:30:57', 1, '65591434939');
-INSERT INTO `borrow_books` VALUES (3, '9780553380163', '2024-10-03 15:10:14', '2024-10-5 23:31:17', 2, '65591434939');
+INSERT INTO `borrow_books` VALUES (3, '9780553380163', '2024-10-03 15:10:14', '2024-10-5 23:31:17', 1, '65591434939');
 INSERT INTO `borrow_books` VALUES (11, '9780321193681', '2024-10-03 15:41:39', '2024-10-04 13:30:56', 1, '65591434939');
 INSERT INTO `borrow_books` VALUES (12, '9780596006621', '2024-10-03 16:05:46', '2024-10-04 13:30:57', 1, '65591434939');
 
@@ -203,7 +203,7 @@ CREATE TABLE `borrow_cards`  (
 -- ----------------------------
 -- Records of borrow_cards
 -- ----------------------------
-INSERT INTO `borrow_cards` VALUES (1, '65591434939', '程霜', 'e1ac2ea550e74ddc90301a212acea505.jpeg', 3, 1, 2, 10, 2, '2024-09-27 21:07:36', 100, 1);
+INSERT INTO `borrow_cards` VALUES (1, '65591434939', '程霜', 'e1ac2ea550e74ddc90301a212acea505.jpeg', 3, 1, 2, 10, 1, '2024-09-27 21:07:36', 100, 1);
 INSERT INTO `borrow_cards` VALUES (2, '80718444582', '张伟', '82c938f416f74c5dab5fcf2847bd5705.jpeg', 3, 2, 1, 1, 0, '2024-09-27 21:09:06', 100, 1);
 
 -- ----------------------------
@@ -263,6 +263,27 @@ INSERT INTO `department` VALUES (9, '社会学系');
 INSERT INTO `department` VALUES (10, '经济学系');
 INSERT INTO `department` VALUES (11, '法学院');
 INSERT INTO `department` VALUES (12, '环境科学系');
+
+-- ----------------------------
+-- Table structure for login_log
+-- ----------------------------
+DROP TABLE IF EXISTS `login_log`;
+CREATE TABLE `login_log`  (
+  `id` int NOT NULL AUTO_INCREMENT COMMENT 'ID',
+  `user_id` char(11) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL COMMENT '登录人员卡号',
+  `user_name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL COMMENT '用户名',
+  `ip` varchar(128) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL COMMENT 'IP地址',
+  `role` int NULL DEFAULT NULL COMMENT '身份',
+  `unit` int NULL DEFAULT NULL COMMENT '单位',
+  `create_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of login_log
+-- ----------------------------
+INSERT INTO `login_log` VALUES (1, '65591434939', '程霜', '0:0:0:0:0:0:0:1', 4, 2, '2024-10-26 09:52:11');
+INSERT INTO `login_log` VALUES (2, '80718444582', '张伟', '0:0:0:0:0:0:0:1', 2, 3, '2024-10-26 09:53:10');
 
 -- ----------------------------
 -- Table structure for roles
